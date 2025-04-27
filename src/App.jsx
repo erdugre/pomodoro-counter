@@ -56,6 +56,15 @@ function App() {
 
     return () => clearInterval(interval);
   }, [startButton, seconds]);
+
+  
+  useEffect(() => {
+    if (seconds > 0) {
+      document.title = `${formatTimer(seconds)} - Pomodoro Timer`;
+    } else {
+      document.title = 'Pomodoro Timer';
+    }
+  }, [seconds]);
   
 
   const startTimer = () => {
